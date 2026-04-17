@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GOVT ITI Balasore Hub</title>
+    <style>
+        :root { --primary: #003366; --secondary: #ff9900; --light: #f4f7f6; --dark: #1a1a1a;}
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: #333; line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 20px; text-align: center; border-bottom: 5px solid var(--secondary); }
+        .container { max-width: 600px; margin: 30px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: var(--primary); }
+        .back-btn { display: inline-block; margin-bottom: 20px; padding: 10px 15px; background: var(--primary); color: white; border-radius: 4px; text-decoration: none; font-weight: bold;}
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--primary);}
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit;}
+        .submit-btn { background: var(--secondary); color: white; border: none; padding: 12px 20px; font-size: 1.1em; cursor: pointer; border-radius: 4px; font-weight: bold; width: 100%;}
+        .submit-btn:hover { background: #e68a00; }
+    </style>
+</head>
+<body>
+<header><h2>GOVT ITI Balasore Hub</h2></header>
+<div class="container">
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    <h1>Contact Us</h1>
+    <p>If you have any questions, suggestions, or face any issues with the website, feel free to reach out to our COPA development team!</p>
+    
+    <form action="mailto:your-avia3774@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="Name" required placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label>Email ID or ITI Trade</label>
+            <input type="text" name="Email_or_Trade" required placeholder="E.g., student@gmail.com or Fitter 1st Year">
+        </div>
+        <div class="form-group">
+            <label>Your Message</label>
+            <textarea name="Message" rows="5" required placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+    <p style="margin-top: 20px; font-size: 0.9em; color: #666; text-align: center;">*Clicking send will open your default email application.</p>
+</div>
+</body>
+</html>
