@@ -3,94 +3,440 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITI Blog & Articles - GOVT ITI Balasore Hub</title>
+    <title>Ultimate ITI Career & Exam Guide - GOVT ITI Balasore Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --navy-blue: #002D62; --khaki-beige: #FAF5EE; --iti-orange: #FFA500; --skill-india-maroon: #8B0000; --text-color: #333; --white: #ffffff; --font-main: 'Open Sans', sans-serif; --font-heading: 'Montserrat', sans-serif; }
-        body { margin: 0; padding: 0; background-color: var(--khaki-beige); font-family: var(--font-main); color: var(--text-color); line-height: 1.8; }
+        body { margin: 0; padding: 0; background-color: var(--khaki-beige); font-family: var(--font-main); color: var(--text-color); line-height: 1.8; scroll-behavior: smooth; }
         
-        .page-hero { background: linear-gradient(rgba(0,45,98,0.9), rgba(0,45,98,0.9)); color: var(--white); text-align: center; padding: 80px 20px 60px 20px; border-bottom: 6px solid var(--iti-orange); position: relative; }
+        .page-hero { background: linear-gradient(rgba(0,45,98,0.95), rgba(0,45,98,0.95)); color: var(--white); text-align: center; padding: 80px 20px 60px 20px; border-bottom: 6px solid var(--iti-orange); position: relative; }
         .page-hero h1 { font-family: var(--font-heading); font-size: 2.8rem; margin: 0 0 10px 0; }
-        .page-hero p { font-size: 1.15rem; opacity: 0.9; }
+        .page-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
         
         .back-home-btn { position: absolute; top: 20px; left: 20px; display: inline-flex; align-items: center; gap: 8px; background-color: var(--white); color: var(--navy-blue); text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; transition: 0.3s; }
         .back-home-btn:hover { background-color: var(--iti-orange); color: var(--white); }
 
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; display: flex; gap: 40px; flex-wrap: wrap; }
         
-        /* Blog Post Card Styling */
-        .blog-post { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); margin-bottom: 40px; border-left: 5px solid var(--navy-blue); }
-        .blog-post h2 { font-family: var(--font-heading); color: var(--navy-blue); font-size: 2rem; margin-top: 0; margin-bottom: 15px; }
-        .blog-meta { font-size: 0.9rem; color: #777; margin-bottom: 25px; display: flex; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .blog-meta i { color: var(--iti-orange); }
-        .blog-content p { color: #444; font-size: 1.05rem; margin-bottom: 20px; text-align: justify; }
-        .blog-content h4 { color: var(--skill-india-maroon); font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; }
+        /* Table of Contents (Index) - Desktop Sidebar */
+        .toc-sidebar { flex: 1; min-width: 280px; background: var(--white); padding: 30px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); height: fit-content; position: sticky; top: 20px; border-top: 5px solid var(--iti-orange); }
+        .toc-sidebar h3 { font-family: var(--font-heading); color: var(--navy-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .toc-sidebar ul { list-style: none; padding: 0; margin: 0; }
+        .toc-sidebar li { margin-bottom: 10px; }
+        .toc-sidebar a { color: #555; text-decoration: none; font-weight: 600; transition: 0.3s; display: block; padding: 5px 0; border-bottom: 1px dashed #eee; }
+        .toc-sidebar a:hover { color: var(--iti-orange); padding-left: 8px; }
+
+        /* Main Blog Content */
+        .blog-content { flex: 2; min-width: 600px; }
+        
+        .trade-card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); margin-bottom: 40px; border-left: 6px solid var(--navy-blue); }
+        .trade-card h2 { font-family: var(--font-heading); color: var(--navy-blue); font-size: 2.2rem; margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid var(--khaki-beige); padding-bottom: 10px; }
+        
+        .info-section { margin-top: 25px; }
+        .info-section h4 { color: var(--skill-india-maroon); font-size: 1.25rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .info-section p, .info-section ul { color: #444; font-size: 1.05rem; }
+        .info-section ul { padding-left: 20px; }
+        .info-section li { margin-bottom: 8px; }
+
+        /* Highlight Boxes */
+        .highlight-box { background: #fdf8e4; padding: 15px 20px; border-radius: 8px; border-left: 4px solid var(--iti-orange); margin-top: 20px; }
+        .highlight-box strong { color: var(--navy-blue); }
+        
+        @media (max-width: 768px) { .blog-content { min-width: 100%; } .toc-sidebar { position: static; } }
     </style>
 </head>
 <body>
     <div class="page-hero">
         <a href="index.html" class="back-home-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
-        <h1>ITI Articles & Insights</h1>
-        <p>Expert career guidance, exam tips, and industry updates for ITI Trainees.</p>
+        <h1>Ultimate ITI Career & Exam Guide</h1>
+        <p>A complete breakdown of Jobs, NCVT Exams, and Preparation Strategies for all 18 Specialized Trades at GOVT ITI Balasore.</p>
     </div>
 
     <div class="container">
         
-        <article class="blog-post">
-            <h2>Top 5 Career Opportunities After Completing ITI in 2026</h2>
-            <div class="blog-meta">
-                <span><i class="fas fa-calendar-alt"></i> 20 April 2026</span>
-                <span><i class="fas fa-user-edit"></i> By Avinandana Sahani</span>
-                <span><i class="fas fa-tags"></i> Career Guide</span>
-            </div>
-            <div class="blog-content">
-                <p>Completing an Industrial Training Institute (ITI) course is one of the smartest decisions for students looking to enter the workforce quickly with highly specialized technical skills. Whether you are from the COPA, Fitter, Electrician, or Machinist trade, the current industrial boom in India offers exceptional opportunities. Here is a detailed look at the top career paths you can choose after passing your NCVT exams.</p>
-                
-                <h4>1. National Apprenticeship Promotion Scheme (NAPS)</h4>
-                <p>The best first step for any ITI graduate is to register on the Apprenticeship India portal. Companies like Tata Motors, Maruti Suzuki, Indian Railways, and DRDO regularly hire apprentices. This not only gives you hands-on factory experience but also provides a monthly stipend. Apprenticeship certificates carry heavy weightage in government job applications.</p>
-                
-                <h4>2. Government Jobs (Railways, DRDO, ISRO)</h4>
-                <p>The Indian Railways is the largest employer of ITI pass-outs, specifically hiring for Assistant Loco Pilot (ALP) and Technician roles. Organizations like ISRO, BHEL, and ONGC also release specific vacancies for ITI trades. You need to keep a close watch on Employment News and prepare for technical written exams to secure these highly stable jobs.</p>
-                
-                <h4>3. Defense Forces (Indian Army & Navy)</h4>
-                <p>ITI students have a massive advantage in defense recruitments. Under the Agniveer Technical schemes, or direct tradesman entries in the Indian Navy and Territorial Army, candidates with technical backgrounds are highly preferred. Having a strong physical fitness routine along with your technical knowledge makes you a prime candidate for the armed forces.</p>
-                
-                <h4>4. Private Sector & MNCs</h4>
-                <p>Manufacturing is booming. Multinational companies require skilled operators, assembly line technicians, and quality check inspectors. If you are from COPA, roles like Data Entry Operator, Junior Web Developer, and Office Automation Assistant are in high demand in the corporate IT sector.</p>
+        <aside class="toc-sidebar">
+            <h3><i class="fas fa-list"></i> Select Your Trade</h3>
+            <ul>
+                <li><a href="#copa">1. COPA</a></li>
+                <li><a href="#fitter">2. Fitter</a></li>
+                <li><a href="#electrician">3. Electrician</a></li>
+                <li><a href="#machinist">4. Machinist</a></li>
+                <li><a href="#electronics">5. Electronics Mechanic</a></li>
+                <li><a href="#mmv">6. Mechanic Motor Vehicle (MMV)</a></li>
+                <li><a href="#draughtsman">7. Draughtsman (Mechanical)</a></li>
+                <li><a href="#ev">8. Mechanic Electric Vehicle</a></li>
+                <li><a href="#ictsm">9. ICTSM</a></li>
+                <li><a href="#rac">10. R&AC Technician</a></li>
+                <li><a href="#turner">11. Turner</a></li>
+                <li><a href="#wireman">12. Wireman</a></li>
+                <li><a href="#tractor">13. Mechanic (Tractor)</a></li>
+                <li><a href="#diesel">14. Mechanic Diesel</a></li>
+                <li><a href="#plastic">15. Plastic Processing Operator</a></li>
+                <li><a href="#solar">16. Solar Technician (Electrical)</a></li>
+                <li><a href="#plumber">17. Plumber</a></li>
+                <li><a href="#welder">18. Welder</a></li>
+            </ul>
+        </aside>
 
-                <h4>5. Self-Employment and Entrepreneurship</h4>
-                <p>If you don't want a traditional job, ITI empowers you to start your own business. Electricians, Plumbers, and R&AC Technicians can open their own service centers. With schemes like Mudra Yojana, getting a business loan for a workshop setup has become significantly easier.</p>
-            </div>
-        </article>
+        <main class="blog-content">
 
-        <article class="blog-post">
-            <h2>How to Prepare for NCVT Online CBT Exams: A Complete Guide</h2>
-            <div class="blog-meta">
-                <span><i class="fas fa-calendar-alt"></i> 15 April 2026</span>
-                <span><i class="fas fa-user-edit"></i> By ITI Hub Team</span>
-                <span><i class="fas fa-tags"></i> Exam Preparation</span>
-            </div>
-            <div class="blog-content">
-                <p>The Directorate General of Training (DGT) has completely shifted the ITI examination system to Computer Based Tests (CBT). For many trainees, giving an online exam can be intimidating. However, with the right strategy and resources, scoring above 90% in your NCVT MIS exams is easily achievable. Let's break down the best preparation strategy.</p>
+            <article class="trade-card" id="copa">
+                <h2><i class="fas fa-laptop-code" style="color: var(--iti-orange);"></i> Computer Operator and Programming Assistant (COPA)</h2>
+                <p>The COPA trade is the gateway to the digital and corporate world. It trains students in computer hardware, software installation, basic networking, web development (HTML/CSS/JS), and database management.</p>
                 
-                <h4>1. Master the NIMI Pattern</h4>
-                <p>The most important secret to cracking the NCVT exam is understanding that almost 90% of the questions are sourced directly from the official NIMI (National Instructional Media Institute) question banks. Instead of buying expensive private publisher books, download the official NIMI PDFs for your specific trade (Trade Theory, Employability Skills, and Workshop Calculation).</p>
-                
-                <h4>2. Utilize the Bharat Skills Portal</h4>
-                <p>The Government of India has provided an incredible free resource called Bharat Skills. Here, you can find the updated syllabus, study materials, and most importantly, the exact question banks from which the final exam questions are framed. Make it a daily habit to solve at least 50 MCQs from this portal.</p>
-                
-                <h4>3. Practice with NIMI Mock Test App</h4>
-                <p>To get comfortable with the Computer Based Test environment, download the official NIMI Mock Test application on your smartphone. It simulates the exact interface of the real exam. Practicing here will help you manage your time effectively and reduce exam-day anxiety.</p>
-                
-                <h4>4. Focus on Employability Skills</h4>
-                <p>Many students focus entirely on Trade Theory and neglect Employability Skills (ES). The ES paper is highly scoring and covers basic English, computer literacy, and communication skills. It plays a massive role in boosting your overall ITI percentage, which is crucial for merit-based apprenticeship selections.</p>
-            </div>
-        </article>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>Corporate Sector:</strong> Junior Web Developer, Data Entry Operator, IT Support Assistant, and Database Administrator in MNCs and tech startups.</li>
+                        <li><strong>Government Sector:</strong> High demand in DRDO, ISRO, and Railways for Office Assistants, Computer Operators, and Data Processing roles.</li>
+                        <li><strong>Self-Employment:</strong> Freelance web developer, opening a cyber cafe, or setting up a computer repair and networking shop.</li>
+                    </ul>
+                </div>
 
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory (CBT):</strong> Objective questions on computer fundamentals, MS Office, programming basics, and networking.</li>
+                        <li><strong>Employability Skills (CBT):</strong> English literacy, IT literacy, and communication skills.</li>
+                        <li><strong>Trade Practical:</strong> Hands-on exam involving tasks like writing HTML codes, applying advanced Excel formulas, or configuring a local network.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    Don't just memorize theory! Practice writing HTML/JS code and MS Excel VBA macros daily on your computer. For the CBT exam, solve the NIMI mock tests regularly, as most theory questions are directly picked from the official Bharat Skills question bank.
+                </div>
+            </article>
+
+            <article class="trade-card" id="fitter">
+                <h2><i class="fas fa-wrench" style="color: var(--iti-orange);"></i> Fitter</h2>
+                <p>A core mechanical trade, Fitter forms the backbone of the manufacturing industry. Trainees learn to assemble, fabricate, and maintain heavy machinery components using precision measurement and cutting tools.</p>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>Heavy Engineering & Defense:</strong> Essential roles in Ordnance Factories, HAL, BHEL, and shipyards as structural fitters and machine assemblers.</li>
+                        <li><strong>Railways & Auto Sector:</strong> Massive recruitment for Assistant Loco Pilots (ALP), Railway Technicians, and assembly line workers in companies like Tata Motors and Maruti Suzuki.</li>
+                        <li><strong>Oil & Gas:</strong> Pipe fitters and maintenance technicians in refineries like IOCL and ONGC.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory & WCS (CBT):</strong> MCQs on metals, limits/fits/tolerances, cutting tools, and Workshop Calculation & Science.</li>
+                        <li><strong>Engineering Drawing (Formative/Practical):</strong> Blueprint reading and drawing mechanical components.</li>
+                        <li><strong>Trade Practical:</strong> Extremely crucial. You will be given a raw metal block and asked to create a specific male-female joint using hand tools within a time limit.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    For practicals, master your filing techniques to achieve the perfect "micron-level" finish. For CBT, focus heavily on Workshop Calculation and specific measurement readings (Vernier Caliper, Micrometer). Study the NIMI syllabus thoroughly.
+                </div>
+            </article>
+
+            <article class="trade-card" id="electrician">
+                <h2><i class="fas fa-bolt" style="color: var(--iti-orange);"></i> Electrician</h2>
+                <p>One of the most evergreen and highly demanded trades. Electrician training covers the installation, maintenance, and repair of electrical wiring, industrial motors, transformers, and control panels.</p>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>Power Grids & Boards:</strong> Junior Lineman and Sub-station Attendants in State Electricity Boards (like Tata Power, NTPC).</li>
+                        <li><strong>Construction & Infrastructure:</strong> Industrial wiring experts for real estate projects, metro rail corporations, and massive manufacturing plants.</li>
+                        <li><strong>Self-Employment:</strong> Government-certified electrical contractors for domestic and commercial electrical setups.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory (CBT):</strong> Questions on Ohm’s law, AC/DC circuits, transformer mechanics, and electrical safety standards.</li>
+                        <li><strong>Trade Practical:</strong> Real-world tasks such as winding a motor, setting up a 3-phase connection, stair-case wiring, and using multimeters.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    Safety first! Always draw circuit diagrams before practical exams. For the CBT, memorize the standard symbols of electrical components, formulas for current/voltage calculation, and strictly follow the Bharat Skills question bank.
+                </div>
+            </article>
+
+            <article class="trade-card" id="machinist">
+                <h2><i class="fas fa-cogs" style="color: var(--iti-orange);"></i> Machinist</h2>
+                <p>Machinists are the experts who shape metal blocks into highly precise functional parts using heavy-duty machinery like lathes, milling machines, shapers, and grinders.</p>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>Automobile Components:</strong> Operating CNC and conventional machines to manufacture gears, shafts, and engine parts for auto-giants.</li>
+                        <li><strong>Aerospace & Defense:</strong> Precision machining for aircraft components in HAL and defense sector ordnance factories.</li>
+                        <li><strong>Tool & Die Making:</strong> Specialized jobs in tool room industries manufacturing plastic injection molds and metal stamping dies.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory (CBT):</strong> Questions on cutting speeds, feed rates, CNC programming basics, and machine tool anatomy.</li>
+                        <li><strong>Trade Practical:</strong> Operating a lathe or milling machine to cut a metal job (like gear cutting or step turning) precisely to the dimensions given in the engineering drawing.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    Practical perfection is key here. Understand how to calculate spindle speed and feed rate before standing at the machine. For CBT, study the properties of different cutting tool materials (like Carbide, HSS) from NIMI books.
+                </div>
+            </article>
+
+            <article class="trade-card" id="electronics">
+                <h2><i class="fas fa-microchip" style="color: var(--iti-orange);"></i> Electronics Mechanic</h2>
+                <p>This high-tech trade focuses on the microscopic world of electronic circuits, microprocessors, logic gates, and communication systems. Trainees learn to test, repair, and assemble modern electronic devices.</p>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>Consumer Electronics:</strong> Service engineers and assembly technicians for smartphone, TV, and home appliance manufacturing units (Samsung, LG, Foxconn).</li>
+                        <li><strong>Telecom Sector:</strong> Network maintenance and hardware troubleshooting for telecom giants like Jio and Airtel.</li>
+                        <li><strong>Medical Electronics:</strong> Highly paid roles maintaining complex electronic equipment in large hospitals and research labs.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory (CBT):</strong> Semiconductors, diodes, logic circuits, microcontrollers, and PCB designing concepts.</li>
+                        <li><strong>Trade Practical:</strong> Fault finding in circuits using an Oscilloscope (CRO), precise micro-soldering, and assembling a working electronic project.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    Clear your basics of digital electronics (AND, OR, NOT gates). Practice reading the color codes of resistors instantly. For practicals, keep your hands steady during soldering and ensure you know how to use a digital multimeter perfectly.
+                </div>
+            </article>
+
+            <article class="trade-card" id="mmv">
+                <h2><i class="fas fa-car" style="color: var(--iti-orange);"></i> Mechanic Motor Vehicle (MMV)</h2>
+                <p>Comprehensive training in the repair, overhauling, and maintenance of light and heavy motor vehicles. Covers engine lifecycles, transmission systems, steering, and modern computerized vehicle diagnostics.</p>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>Automobile Service Stations:</strong> Head mechanics and diagnostic specialists in authorized service centers of Hyundai, Mahindra, and Toyota.</li>
+                        <li><strong>State Transport Corporations:</strong> Fleet maintenance engineers for state buses and logistics companies.</li>
+                        <li><strong>Manufacturing Plants:</strong> Quality check and assembly line inspectors in the fast-growing automotive manufacturing sector.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory (CBT):</strong> 2-stroke/4-stroke engine mechanics, BS-VI emission norms, suspension systems, and vehicle aerodynamics.</li>
+                        <li><strong>Trade Practical:</strong> Dismantling and assembling engine components, bleeding brakes, and using OBD-II scanners to find electronic sensor faults.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    Theory questions often focus on modern tech like CRDI and MPFI systems, so don't just study old engine models. For practicals, knowing the exact names and sizes of spanners and tools used for specific engine parts will get you full marks.
+                </div>
+            </article>
+
+            <article class="trade-card" id="draughtsman">
+                <h2><i class="fas fa-drafting-compass" style="color: var(--iti-orange);"></i> Draughtsman (Mechanical)</h2>
+                <p>The architects of the mechanical world. This trade trains students to create highly detailed engineering drawings, blueprints, and 3D models using CAD software to translate ideas into manufacturing plans.</p>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities & Job Fields</h4>
+                    <ul>
+                        <li><strong>R&D Departments:</strong> Working with design engineers in Research and Development centers to create 3D prototypes.</li>
+                        <li><strong>Heavy Fabrication:</strong> Creating structural blueprints for shipbuilding, pipeline layouts, and large-scale manufacturing units.</li>
+                        <li><strong>Freelance Design:</strong> Providing AutoCAD and SolidWorks 3D modeling services to global clients online.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h4><i class="fas fa-file-alt"></i> NCVT Exam Types</h4>
+                    <ul>
+                        <li><strong>Trade Theory (CBT):</strong> Geometric Dimensioning and Tolerancing (GD&T), projection types (1st angle vs 3rd angle), and drafting standards.</li>
+                        <li><strong>Trade Practical (Software):</strong> You will be given a complex physical object or a 2D sketch and asked to create a perfect 3D model and its orthographic projections using AutoCAD.</li>
+                    </ul>
+                </div>
+
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Preparation Strategy:</strong> 
+                    Speed on the software is critical. Memorize all major AutoCAD keyboard shortcuts. Ensure you strictly follow dimensioning rules and line types (hidden lines, center lines) as per BIS standards during your practical exam.
+                </div>
+            </article>
+
+            <article class="trade-card" id="ev">
+                <h2><i class="fas fa-charging-station" style="color: var(--iti-orange);"></i> Mechanic Electric Vehicle</h2>
+                <p>The future of the auto industry. Trainees learn lithium-ion battery management, EV powertrains, and high-voltage safety protocols.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>EV Manufacturers:</strong> High demand in companies like Tata Motors, Ather, and Ola Electric.</li>
+                        <li><strong>Battery Tech:</strong> Roles in Battery Management System (BMS) testing and EV charging station maintenance.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Focus completely on electric motor principles and battery chemistry for CBT. Safety precautions are heavily tested.
+                </div>
+            </article>
+
+            <article class="trade-card" id="ictsm">
+                <h2><i class="fas fa-network-wired" style="color: var(--iti-orange);"></i> Information Communication Technology System Maintenance</h2>
+                <p>Equips students to troubleshoot enterprise-level IT hardware, server infrastructures, and complex LAN/WAN networks.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>IT Parks & BPOs:</strong> System administrators, network technicians, and IT hardware support.</li>
+                        <li><strong>Telecom:</strong> Hardware maintenance in BSNL, Jio, and broadband service providers.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Practice crimping LAN cables and configuring routers for practicals. Memorize OSI model layers for CBT.
+                </div>
+            </article>
+
+            <article class="trade-card" id="rac">
+                <h2><i class="fas fa-snowflake" style="color: var(--iti-orange);"></i> Refrigeration & Air Conditioning Technician</h2>
+                <p>Master the thermodynamics of cooling systems. Covers domestic ACs, commercial cold storage, and advanced inverter tech.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Appliance Giants:</strong> Service engineers for Voltas, LG, and Godrej.</li>
+                        <li><strong>Commercial Sector:</strong> Managing central AC plants in malls, hospitals, and pharmaceutical cold storage.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Perfect your gas charging and leak detection techniques. Study the refrigeration cycle diagram thoroughly for CBT.
+                </div>
+            </article>
+
+            <article class="trade-card" id="turner">
+                <h2><i class="fas fa-cog" style="color: var(--iti-orange);"></i> Turner</h2>
+                <p>Specialized machining focused on center lathe operations, taper turning, and precision metal shaping for manufacturing.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Defense & Railways:</strong> Manufacturing precision shafts and pulleys.</li>
+                        <li><strong>Heavy Engineering:</strong> Operating CNC lathes in large-scale auto component factories.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Speed and accuracy on the Lathe machine dictate your practical marks. Understand thread cutting calculations.
+                </div>
+            </article>
+
+            <article class="trade-card" id="wireman">
+                <h2><i class="fas fa-plug" style="color: var(--iti-orange);"></i> Wireman</h2>
+                <p>Specialists in complex wiring installations for residential, commercial, and industrial complexes, focusing on safety grounding.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Real Estate:</strong> Chief wiring contractors for new building projects.</li>
+                        <li><strong>Power Sector:</strong> Managing industrial distribution boards and 3-phase wiring networks.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Blueprint reading is crucial. Know your Indian Electricity (IE) rules inside out for the CBT exam.
+                </div>
+            </article>
+
+            <article class="trade-card" id="tractor">
+                <h2><i class="fas fa-tractor" style="color: var(--iti-orange);"></i> Mechanic (Tractor)</h2>
+                <p>Essential for the agricultural sector. Deep study of heavy diesel engines, hydraulic lifts, and Power Take-Off (PTO) units.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Agri-Machinery:</strong> Technicians in Mahindra, Sonalika, and John Deere service centers.</li>
+                        <li><strong>Government Sector:</strong> Roles in state agriculture departments and farming collectives.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Focus heavily on hydraulic systems and transmission mechanics for both theory and practicals.
+                </div>
+            </article>
+
+            <article class="trade-card" id="diesel">
+                <h2><i class="fas fa-truck-moving" style="color: var(--iti-orange);"></i> Mechanic Diesel</h2>
+                <p>Mastering the lifecycle of high-performance diesel engines, Fuel Injection Pumps (FIP), and CRDI systems.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Logistics & Transport:</strong> Fleet maintenance for state transport buses and trucking companies.</li>
+                        <li><strong>Railways & Marine:</strong> Operating and maintaining heavy diesel locomotive engines and generator sets.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Understand the differences between petrol and diesel engine cycles clearly. Practice injector calibration.
+                </div>
+            </article>
+
+            <article class="trade-card" id="plastic">
+                <h2><i class="fas fa-recycle" style="color: var(--iti-orange);"></i> Plastic Processing Operator</h2>
+                <p>A core mechanical trade covering polymer science, injection molding, blow molding, and extrusion manufacturing.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Manufacturing Sector:</strong> High demand in auto-parts, toy manufacturing, and PVC pipe production units.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Study polymer properties and heating cycle times. Practical exams test your ability to set up molds quickly.
+                </div>
+            </article>
+
+            <article class="trade-card" id="solar">
+                <h2><i class="fas fa-solar-panel" style="color: var(--iti-orange);"></i> Solar Technician (Electrical)</h2>
+                <p>A futuristic green-energy program focusing on PV system designing, panel mounting, and off-grid/on-grid wiring.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Renewable Energy:</strong> Installation experts for rooftop solar companies and massive solar farms (Adani Solar, Tata Power).</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Focus on battery storage calculation and inverter syncing. Memorize sunlight angle formulas for CBT.
+                </div>
+            </article>
+
+            <article class="trade-card" id="plumber">
+                <h2><i class="fas fa-tools" style="color: var(--iti-orange);"></i> Plumber</h2>
+                <p>Mastering water supply networks, intricate drainage, sanitary fittings, and diverse pipe joint techniques.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Construction & Infra:</strong> Essential for real estate projects, city water supply boards, and firefighting pipeline setups.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Blueprint reading for water layouts is highly tested. Practice perfect threading and watertight PVC jointing.
+                </div>
+            </article>
+
+            <article class="trade-card" id="welder">
+                <h2><i class="fas fa-fire" style="color: var(--iti-orange);"></i> Welder</h2>
+                <p>A foundational fabrication trade mastering ARC, GAS, advanced MIG/MAG, and TIG welding techniques.</p>
+                <div class="info-section">
+                    <h4><i class="fas fa-briefcase"></i> Career Opportunities</h4>
+                    <ul>
+                        <li><strong>Heavy Industries:</strong> Indispensable in shipbuilding, defense manufacturing, and cross-country pipeline projects.</li>
+                    </ul>
+                </div>
+                <div class="info-section highlight-box">
+                    <strong><i class="fas fa-lightbulb"></i> Exam Strategy:</strong> Your practical exam is all about the perfect weld bead and zero porosity. For CBT, study welding defects and safety gases.
+                </div>
+            </article>
+            
+        </main>
     </div>
 
-    <footer style="background-color: #002D62; color: #fff; padding: 40px 20px 20px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 20px;">
+    <footer style="background-color: #002D62; color: #fff; padding: 40px 20px 20px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 40px;">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px;">
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="margin: 0 0 10px 0; color: #FFA500; font-size: 1.5rem;">GOVT ITI Balasore Hub</h3>
@@ -101,10 +447,11 @@
                 <a href="about.html" style="color: #fff; text-decoration: none;">About Us</a>
                 <a href="contact.html" style="color: #fff; text-decoration: none;">Contact Us</a>
                 <a href="privacy.html" style="color: #fff; text-decoration: none;">Privacy Policy</a>
+                <a href="disclaimer.html" style="color: #fff; text-decoration: none;">Disclaimer</a>
             </div>
         </div>
         <div style="max-width: 1200px; margin: 30px auto 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.9rem; opacity: 0.7;">
-            &copy; 2026 GOVT ITI Balasore Hub. Proudly Developed by COPA Trainees.
+            &copy; 2026 GOVT ITI Balasore Hub. Proudly Developed by COPA Trainees (Project Head: Avinandana Sahani). All Rights Reserved.
         </div>
     </footer>
 </body>
