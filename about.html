@@ -3,35 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - GOVT ITI Balasore Hub</title>
+    <title>About Us - GOVT ITI Balasore Digital Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #003366; --secondary: #ff9900; --light: #f4f7f6; --dark: #1a1a1a;}
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--light); color: #333; line-height: 1.6; }
-        header { background: var(--primary); color: white; padding: 20px; text-align: center; border-bottom: 5px solid var(--secondary); }
-        .container { max-width: 900px; margin: 30px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1, h2 { color: var(--primary); }
-        .back-btn { display: inline-block; margin-bottom: 20px; padding: 10px 15px; background: var(--primary); color: white; border-radius: 4px; text-decoration: none; font-weight: bold;}
-        .back-btn:hover { background: var(--secondary); color: #000; }
-        ul { font-size: 1.1em; line-height: 1.8; }
+        :root {
+            --navy-blue: #002D62; /* Uniform Navy Blue */
+            --khaki-beige: #FAF5EE; /* Uniform Khaki Beige */
+            --iti-orange: #FFA500; /* Primary accent */
+            --skill-india-maroon: #8B0000; /* Skill India Maroon accent */
+            --text-color: #333;
+            --white: #ffffff;
+            --font-main: 'Open Sans', sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--khaki-beige); /* Subtle fainted backdrop */
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* 1. Visually Strong "Hero" Section */
+        .about-hero {
+            position: relative;
+            background: linear-gradient(rgba(0,45,98,0.85), rgba(0,45,98,0.85)); /* Navy Gradient backdrop */
+            /* UNCOMMENT AND SET YOUR IMAGE HERE: */
+            /* background-image: url('images/campus_campus_2.jpg'); */
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px 80px 20px;
+            border-bottom: 8px solid var(--skill-india-maroon);
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .back-home-container {
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--iti-orange);
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .back-home-btn:hover {
+            background-color: var(--skill-india-maroon);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        /* Main Content Styling */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .welcome-block {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            border-left: 6px solid var(--navy-blue);
+        }
+
+        .welcome-block p {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: #444;
+        }
+
+        /* 2. Professional Two-Column Mission/Vision Styling */
+        .vision-mission-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .styled-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            border-bottom: 4px solid #eee;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .styled-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--iti-orange);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--khaki-beige);
+            padding-bottom: 15px;
+        }
+
+        .card-header i {
+            font-size: 2rem;
+            color: var(--navy-blue);
+        }
+
+        .card-header h3 {
+            font-family: var(--font-heading);
+            color: var(--navy-blue);
+            font-size: 1.6rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* What We Offer / Who We Are Sections */
+        .info-section {
+            margin-bottom: 50px;
+        }
+
+        .info-section h3 {
+            font-family: var(--font-heading);
+            color: var(--navy-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-section h3::after {
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            background-color: var(--khaki-beige);
+            border-radius: 10px;
+        }
+
+        .offer-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .offer-list li {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .offer-list li i {
+            color: var(--iti-orange);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* 3. Professional Team Member Profile Card */
+        .team-profile-container {
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            background: var(--navy-blue); /* Navy Blue Theme for profile */
+            color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,45,98,0.2);
+            gap: 30px;
+            border-left: 8px solid var(--iti-orange);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-image: url('placeholder_campus_wa.png'); /* Replace with Wa.png subtle watermark */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .profile-pic-placeholder {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 4px solid var(--white);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* YOU NEED TO PASTE YOUR REAL PHOTO URL HERE */
+        /* .profile-pic-placeholder img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; } */
+
+        .profile-pic-placeholder i {
+            font-size: 3.5rem;
+            color: #ddd;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin: 0 0 5px 0;
+            font-weight: 700;
+        }
+
+        .profile-info .profile-title {
+            background-color: var(--iti-orange);
+            color: var(--white);
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .profile-info .profile-bio {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        /* 4. Sublte Uniform Backdrop Technique - Already handled by var(--khaki-beige) on body */
     </style>
 </head>
 <body>
-<header><h2>GOVT ITI Balasore Hub</h2></header>
-<div class="container">
-    <a href="index.html" class="back-btn">⬅ Back to Home</a>
-    <h1>About Us</h1>
-    <p>Welcome to <strong>GOVT ITI Balasore Hub</strong>, your number one digital resource center for all ITI-related needs.</p>
-    
-    <h2>Our Mission</h2>
-    <p>Our main goal is to help ITI trainees by providing a single platform where they can find important government links, daily mock tests, latest news, and job updates without wasting time searching on multiple websites.</p>
-    
-    <h2>Who We Are</h2>
-    <p>This digital hub is a project proudly developed by COPA (Computer Operator and Programming Assistant) trainees of GOVT ITI Balasore, Batch 2025-2026:</p>
-    <ul>
-        <li><strong>Avinandana Sahani (Abhi)</strong> - Lead Developer & Project Head</li>
-    </ul>
-    
-    <p>We hope you find this portal useful for your ITI journey. If you have any questions or comments, please don't hesitate to reach out.</p>
+
+    <div class="back-home-container">
+        <a href="index.html" class="back-home-btn">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </div>
+
+    <div class="about-hero">
+        <h1>About Us</h1>
+        <p>Your Ultimate Digital Resource Center Designed Exclusively for ITI Trainees</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="welcome-block">
+            <p><strong>Welcome to the GOVT ITI Balasore Hub</strong>, your premier, all-in-one digital resource center explicitly designed for the modern Industrial Training Institute (ITI) ecosystem. In today's fast-paced digital world, having quick access to accurate information is crucial. Our platform bridges the gap between students and essential educational resources, providing a seamless experience for the technical community.</p>
+        </div>
+        
+        <div class="vision-mission-row">
+            <div class="styled-card">
+                <div class="card-header">
+                    <i class="fas fa-target"></i>
+                    <h3>Our Mission</h3>
+                </div>
+                <div class="card-content">
+                    <p>Our primary mission is to digitally empower ITI trainees across all engineering and non-engineering trades by bringing all essential portals, technical study materials, daily mock tests, and real-time career updates under one seamlessly integrated digital umbrella.</p>
+                </div>
+            </div>
+
+            <div class="styled-card">
+                <div class="card-header">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                </div>
+                <div class="card-content">
+                    <p>We visualize Entirely eliminate this digital friction. Cultivate a tech-savvy campus environment where practical workshop skills are perfectly complemented by top-tier digital accessibility, effortless access official channels. Ensuring students waste study time complex searching.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3><i class="fas fa-gift"></i> What We Offer</h3>
+            <ul class="offer-list">
+                <li><i class="fas fa-check-circle"></i> Instant redirection to NCVT MIS, Apprenticeship, NIMI</li>
+                <li><i class="fas fa-calculator"></i> Interactive tools (ITI Percentage & BMI Calculators)</li>
+                <li><i class="fas fa-image"></i> Comprehensive trade showcases & detailed campus updates</li>
+                <li><i class="fas fa-user-graduate"></i> Daily career insights for technical education enthusiasts</li>
+            </ul>
+        </div>
+
+        <div class="info-section team-profile-container">
+            <h3><i class="fas fa-users-cog"></i> Who We Are</h3>
+            <p>This ambitious digital hub is a passion project proudly conceptualized and developed by the forward-thinking trainees of the COPA trade at GOVT ITI Balasore (Batch 2025-2026).</p>
+            
+            <div class="profile-card">
+                <div class="profile-pic-placeholder">
+    <img src="abhi.png" alt="Avinandana Sahani (Abhi)" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
 </div>
+                <div class="profile-info">
+                    <h4>Avinandana Sahani (Abhi)</h4>
+                    <span class="profile-title">Lead Developer & Project Head</span>
+                    <p class="profile-bio">Applying coding & web development skills to solve real-world problems for fellow campus students. Dedicated to building community-driven community-driven campus technology and enhancing community community experiences through digital.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <p style="margin-top: 40px; color: #666; font-size: 1rem;">Thank you for being a part of our digital journey. We sincerely hope that GOVT ITI Balasore Hub becomes your most trusted companion throughout your technical education and future career endeavors!</p>
+    </div>
+
 </body>
 </html>
