@@ -101,35 +101,28 @@
         .whatsapp-float img { width: 35px; height: 35px; filter: brightness(0) invert(1); }
 
 
-/* --- Mobile Screen Brahmastra Design --- */
+/* --- HEADER CSS (PC AND MOBILE BOTH) --- */
+.top-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 5%;
+}
+
+/* PC Design */
+.logo-left { width: 25%; text-align: left; order: 1; }
+.header-text { width: 50%; text-align: center; order: 2; }
+.logo-right { width: 25%; text-align: right; order: 3; }
+.logo-left img, .logo-right img { height: 60px; max-width: 100%; object-fit: contain; }
+
+/* Mobile Design (Brahmastra) */
 @media (max-width: 768px) {
-    .top-header {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: space-between !important;
-        padding: 10px !important;
-    }
-    .logo-box {
-        width: 45% !important; /* Fix width de di */
-        display: flex !important;
-    }
-    .logo-box:first-of-type {
-        justify-content: flex-start !important;
-        order: 1 !important;
-    }
-    .logo-box:last-of-type {
-        justify-content: flex-end !important;
-        order: 2 !important;
-    }
-    .logo-box img {
-        max-height: 55px !important;
-        width: auto !important;
-    }
-    .header-text {
-        width: 100% !important;
-        order: 3 !important;
-        margin-top: 15px !important;
-    }
+    .logo-left { width: 48%; text-align: left; order: 1; }
+    .logo-right { width: 48%; text-align: right; order: 2; }
+    .header-text { width: 100%; order: 3; margin-top: 15px; }
+    .logo-left img, .logo-right img { height: 60px; }
 }
 
    </style>
@@ -138,18 +131,18 @@
 
 <header class="top-header">
     
-    <div class="logo-box">
+    <div class="logo-left">
         <img src="iti logo.jpg" alt="ITI Balasore Logo">
     </div>
 
-    <div class="header-text" style="text-align: center;">
-        <h1 style="color: #d35400;">Industrial Training Institute, Balasore</h1>
-        <h3 style="color: #3944dd;">Government of Odisha</h3>
-        <p style="color: #27ae60;">ଶିଳ୍ପ ତାଲିମ ଅନୁଷ୍ଠାନ, ବାଲେଶ୍ଵର, ଓଡ଼ିଶା ସରକାର</p>
+    <div class="header-text">
+        <h1 style="color: #d35400; margin: 0; font-size: 1.8rem; font-weight: bold;">Industrial Training Institute, Balasore</h1>
+        <h3 style="color: #3027ae; margin: 5px 0; font-weight: 600;">Government of Odisha</h3>
+        <p style="color: #27ae60; margin: 0; font-weight: bold;">ଶିଳ୍ପ ତାଲିମ ଅନୁଷ୍ଠାନ, ବାଲେଶ୍ଵର, ଓଡ଼ିଶା ସରକାର</p>
     </div>
 
-    <div class="logo-box">
-        <img src="tata strive.jpeg" alt="Tata Strive Logo">
+    <div class="logo-right">
+        <img src="tata strive.png" alt="Tata Strive Logo">
     </div>
 
 </header>
