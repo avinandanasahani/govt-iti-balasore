@@ -100,6 +100,22 @@
         .whatsapp-float:hover { transform: scale(1.1); }
         .whatsapp-float img { width: 35px; height: 35px; filter: brightness(0) invert(1); }
 
+/* --- Sirf Mobile Screen Ke Liye Design --- */
+@media (max-width: 768px) {
+    .top-header {
+        flex-wrap: wrap; /* Isse text ko niche aane ki jagah mil jayegi */
+        padding: 15px 10px;
+    }
+    .logo-box img {
+        height: 60px; /* Mobile par logo chota karna padega taaki dono ek line me aa sakein */
+    }
+    .header-text {
+        order: 3; /* Yeh text ko dono logo ke niche bhej dega */
+        width: 100%; /* Text poori screen ki chaurai lega */
+        margin-top: 15px;
+    }
+}
+
    </style>
 </head>
 <body>
@@ -112,7 +128,7 @@
 
     <div class="header-text" style="text-align: center;">
         <h1 style="color: #d35400;">Industrial Training Institute, Balasore</h1>
-        <h3 style="color: #27ae60;">Government of Odisha</h3>
+        <h3 style="color: #101ed6;">Government of Odisha</h3>
         <p style="color: #27ae60;">ଶିଳ୍ପ ତାଲିମ ଅନୁଷ୍ଠାନ, ବାଲେଶ୍ଵର, ଓଡ଼ିଶା ସରକାର</p>
     </div>
 
