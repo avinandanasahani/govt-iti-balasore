@@ -101,48 +101,51 @@
         .whatsapp-float img { width: 35px; height: 35px; filter: brightness(0) invert(1); }
 
 
-/* --- HEADER CSS (PC AND MOBILE BOTH) --- */
-.top-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    padding: 15px 5%;
+
+#main-super-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: #ffffff !important;
+    padding: 15px 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
-/* PC Design */
-.logo-left { width: 25%; text-align: left; order: 1; }
-.header-text { width: 50%; text-align: center; order: 2; }
-.logo-right { width: 25%; text-align: right; order: 3; }
-.logo-left img, .logo-right img { height: 60px; max-width: 100%; object-fit: contain; }
+#left-super-logo { width: 20% !important; text-align: left !important; }
+#right-super-logo { width: 20% !important; text-align: right !important; }
+#center-super-text { width: 55% !important; text-align: center !important; }
+#left-super-logo img, #right-super-logo img { max-height: 70px !important; max-width: 100% !important; object-fit: contain !important; }
 
-/* Mobile Design (Brahmastra) */
-@media (max-width: 768px) {
-    .logo-left { width: 48%; text-align: left; order: 1; }
-    .logo-right { width: 48%; text-align: right; order: 2; }
-    .header-text { width: 100%; order: 3; margin-top: 15px; }
-    .logo-left img, .logo-right img { height: 60px; }
+/* === MOBILE FIX === */
+@media screen and (max-width: 768px) {
+    #left-super-logo { width: 48% !important; order: 1 !important; text-align: left !important; }
+    #right-super-logo { width: 48% !important; order: 2 !important; text-align: right !important; }
+    #center-super-text { width: 100% !important; order: 3 !important; margin-top: 15px !important; }
+    
+    #left-super-logo img { max-height: 55px !important; margin-left: 5px !important;}
+    #right-super-logo img { max-height: 55px !important; margin-right: 5px !important;}
 }
 
    </style>
 </head>
 <body>
 
-<header class="top-header">
+<header id="main-super-header">
     
-    <div class="logo-left">
-        <img src="iti logo.jpg" alt="ITI Balasore Logo">
+    <div id="left-super-logo">
+        <img src="iti logo.jpg" alt="ITI Logo">
     </div>
 
-    <div class="header-text">
-        <h1 style="color: #d35400; margin: 0; font-size: 1.8rem; font-weight: bold;">Industrial Training Institute, Balasore</h1>
-        <h3 style="color: #3027ae; margin: 5px 0; font-weight: 600;">Government of Odisha</h3>
-        <p style="color: #27ae60; margin: 0; font-weight: bold;">ଶିଳ୍ପ ତାଲିମ ଅନୁଷ୍ଠାନ, ବାଲେଶ୍ଵର, ଓଡ଼ିଶା ସରକାର</p>
+    <div id="center-super-text">
+        <h1 style="color: #d35400; font-size: 1.5rem; margin: 0; font-weight: bold;">Industrial Training Institute, Balasore</h1>
+        <h3 style="color: #2249c7; font-size: 1rem; margin: 5px 0;">Government of Odisha</h3>
+        <p style="color: #27ae60; font-size: 0.9rem; font-weight: bold; margin: 0;">ଶିଳ୍ପ ତାଲିମ ଅନୁଷ୍ଠାନ, ବାଲେଶ୍ଵର, ଓଡ଼ିଶା ସରକାର</p>
     </div>
 
-    <div class="logo-right">
-        <img src="tata strive.png" alt="Tata Strive Logo">
+    <div id="right-super-logo">
+        <img src="tata strive.png" alt="Tata Strive">
     </div>
 
 </header>
