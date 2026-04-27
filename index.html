@@ -100,18 +100,30 @@
         .whatsapp-float:hover { transform: scale(1.1); }
         .whatsapp-float img { width: 35px; height: 35px; filter: brightness(0) invert(1); }
 
-/* --- Sirf Mobile Screen Ke Liye Design --- */
+
 @media (max-width: 768px) {
     .top-header {
-        flex-wrap: wrap; /* Isse text ko niche aane ki jagah mil jayegi */
+        flex-wrap: wrap; 
         padding: 15px 10px;
     }
+    .logo-box {
+        width: 48%; /* 👈 Dono logo box ko aadhi-aadhi screen de di */
+        display: flex;
+    }
+    .logo-box:first-child {
+        justify-content: flex-start; /* 👈 ITI logo ko ekdam left dhakel dega */
+    }
+    .logo-box:last-child {
+        justify-content: flex-end; /* 👈 Tata logo ko ekdam right dhakel dega */
+    }
     .logo-box img {
-        height: 60px; /* Mobile par logo chota karna padega taaki dono ek line me aa sakein */
+        height: 55px; /* Mobile par clean dikhne ke liye perfect height */
+        max-width: 100%;
+        object-fit: contain;
     }
     .header-text {
-        order: 3; /* Yeh text ko dono logo ke niche bhej dega */
-        width: 100%; /* Text poori screen ki chaurai lega */
+        order: 3;
+        width: 100%; /* 👈 Text ko niche poori jagah mil jayegi */
         margin-top: 15px;
     }
 }
