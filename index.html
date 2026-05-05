@@ -27,11 +27,12 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Sabse zaruri line */
+    overflow-x: hidden; /* Ye white space ko rok lega */
 }
 
-* {
-    box-sizing: border-box;
+/* Scrollbar hide karne ke liye taaki ganda na dikhe */
+div::-webkit-scrollbar {
+    display: none;
 }
 
 .logo-box img {
@@ -194,15 +195,15 @@ html, body {
         </marquee>
     </div>
 
-<div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px 10px; overflow: hidden;">
+    <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 10px 0; overflow: hidden;">
 
     <h2 style="text-align: center; color: #002D62; border-bottom: 2px solid #FFA500; padding-bottom: 10px; margin-bottom: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         Our Respected Leaders
     </h2>
 
     <!-- ROW 1: PRINCIPAL SIR (Center) -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; margin-top: 20px;">
-    <div style="background: #e4e9ed; width: 288px; max-width: 90%; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; margin-bottom: 15px;">
+    <div style="display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 20px; width: 100%; overflow-x: auto; padding: 10px; scrollbar-width: none; -ms-overflow-style: none;">
+        <div style="background: #e4e9ed; flex: 0 0 280px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;">
         <img src="principal sir.jpeg" alt="Principal" style="width: 170px; height: 170px; border-radius: 50%; object-fit: cover; border: 3px solid #FFA500; margin-bottom: 15px;">
                 <h3 style="color: #002D62; margin: 0 0 5px 0;">Er.Mahendra Kumar Behera</h3>
                 <p style="color: #d35400; font-weight: bold; margin: 0 0 10px 0;">Principal (Sir)</p>
@@ -210,16 +211,16 @@ html, body {
         </div>
 
         <!-- ROW 2: T.O MA'AM & T.O SIR (Side-by-side) -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; margin-top: 20px;">
+    <div style="display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 20px; width: 100%; overflow-x: auto; padding: 10px; scrollbar-width: none; -ms-overflow-style: none;">
         <!-- T.O Ma'am Card -->
-    <div style="background: #e4e9ed; width: 288px; max-width: 90%; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; margin-bottom: 15px;">
+    <div style="background: #e4e9ed; flex: 0 0 280px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;">
         <img src="T.O ma'am.jpeg" alt="T.O Ma'am" style="width: 170px; height: 170px; border-radius: 50%; object-fit: cover; border: 3px solid #FFA500; margin-bottom: 15px;">
                 <h3 style="color: #002D62; margin: 0 0 5px 0;">Mrs.Prativa Diwedi</h3>
                 <p style="color: #d35400; font-weight: bold; margin: 0 0 10px 0;">Training Officer (Ma'am)</p>
             </div>
 
             <!-- T.O Sir Card -->
-    <div style="background: #e4e9ed; width: 288px; max-width: 90%; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; margin-bottom: 15px;">
+    <div style="background: #e4e9ed; flex: 0 0 280px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;">
             <img src="T.O Sir.jpeg" alt="T.O Sir" style="width: 170px; height: 170px; border-radius: 50%; object-fit: cover; border: 3px solid #FFA500; margin-bottom: 15px;">
                 <h3 style="color: #002D62; margin: 0 0 5px 0;">Mr.Rajat Mishra</h3>
                 <p style="color: #d35400; font-weight: bold; margin: 0 0 10px 0;">Training Officer (Sir)</p>
