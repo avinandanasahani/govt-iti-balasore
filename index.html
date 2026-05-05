@@ -23,15 +23,25 @@
     background: #ffffff;
 }
 
+/* Sabse upar style tag mein */
+* {
+    box-sizing: border-box; /* Isse padding width ke bahar nahi jati */
+}
+
 html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Sabse zaruri line */
+    overflow-x: hidden; /* Side scrolling ko band karne ke liye */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Poori site center karne ke liye */
 }
 
-* {
-    box-sizing: border-box;
+/* Notice board ke andar ka marquee control */
+.notice-board marquee {
+    width: 100%;
+    display: block;
 }
 
 .logo-box img {
@@ -187,15 +197,15 @@ html, body {
 <div class="container">
     <div id="live-clock" style="text-align: center; margin: 15px 0; font-weight: bold; color: #003366; font-size: 1.2em;"></div>
 
-    <div class="notice-board">
+    <div class="notice-board" style="width: 95%; max-width: 1200px; margin: 15px auto; overflow: hidden; border-radius: 8px;">
         <h4>📢 College Notices & Updates</h4>
         <marquee behavior="scroll" direction="left" scrollamount="6">
             Welcome to GOVT ITI Balasore Digital Hub! | Read Daily Top India News Here. | NCVT MIS results portal updated. | Local Job Links Fixed.
         </marquee>
     </div>
 
-<div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px 10px; overflow: hidden;">
-
+<div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 10px; box-sizing: border-box;"></div>
+    
     <h2 style="text-align: center; color: #002D62; border-bottom: 2px solid #FFA500; padding-bottom: 10px; margin-bottom: 25px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         Our Respected Leaders
     </h2>
